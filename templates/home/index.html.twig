@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ApiManga{% endblock %}
+
+{% block body %}
+    <section class="animes">
+        <div class="container d-flex flex-wrap">
+            {% for anime in dataAnimes %}
+                {# {{ dump(anime) }} #}
+                <div class="card" style="width: 18rem;">
+                    <img src={{ anime.attributes.posterImage.medium }} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ anime.attributes.canonicalTitle }}</h5>
+                        {#                <p class="card-text">{{ anime.attributes.description }}</p> #}
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
