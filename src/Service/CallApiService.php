@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App\Service;
 
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -13,7 +22,7 @@ class CallApiService
         $this->client = $client;
     }
 
-    public function  getAllMange(): array
+    public function getAllMange(): array
     {
         return $this->getApi('manga');
     }
@@ -23,12 +32,13 @@ class CallApiService
         return $this->getApi('anime');
     }
 
-    private function getApi (string $var): array
+    private function getApi(string $var): array
     {
         $response = $this->client->request(
             'GET',
-            'https://kitsu.io/api/edge/trending/' . $var
+            'https://kitsu.io/api/edge/trending/'.$var
         );
+
         return $response->toArray();
     }
 }
