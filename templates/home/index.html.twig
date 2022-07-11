@@ -3,6 +3,9 @@
 {% block title %}ApiManga{% endblock %}
 
 {% block body %}
+
+    {{ include('_partials/_carousel.html.twig') }}
+
     <section class="animes">
         <div class="container d-flex flex-wrap">
             {% for anime in dataAnimes %}
