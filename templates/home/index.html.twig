@@ -7,19 +7,24 @@
     {{ include('_partials/_carousel.html.twig') }}
 
     <section class="animes">
-        <div class="container d-flex flex-wrap">
-            {% for anime in dataAnimes %}
-                {# {{ dump(anime) }} #}
-                <div class="card" style="width: 18rem;">
-                    <img src={{ anime.attributes.posterImage.medium }} class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"> {{ anime.attributes.canonicalTitle }}</h5>
-                        {#                <p class="card-text">{{ anime.attributes.description }}</p> #}
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="container">
+            <h1 class="pb-3 border-bottom  mt-5 pt-5">Anime selection...</h1>
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 align-items-stretch g-4 py-5 ">
+                {% for anime in dataAnimes %}
+                    {# {{ dump(anime) }} #}
+                    <div class="card-group">
+                        <div class="card mx-auto" style="width: 18rem">
+                            <img src={{ anime.attributes.posterImage.medium }} class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"> {{ anime.attributes.canonicalTitle }}</h5>
+                                {#                <p class="card-text">{{ anime.attributes.description }}</p> #}
+                                {#                            <a href="#" class="btn btn-primary ">Go</a> #}
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% endblock %}
