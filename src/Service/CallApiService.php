@@ -22,7 +22,7 @@ class CallApiService
         $this->client = $client;
     }
 
-    public function getAllMange(): array
+    public function getAllManga(): array
     {
         return $this->getApi('manga');
     }
@@ -30,6 +30,16 @@ class CallApiService
     public function getAllAnime(): array
     {
         return $this->getApi('anime');
+    }
+
+    public function getAllAnimeId($id): array
+    {
+        $response = $this->client->request(
+            'GET',
+            'https://kitsu.io/api/edge/anime/'.$id
+        );
+
+        return $response->toArray();
     }
 
     private function getApi(string $var): array
