@@ -14,15 +14,16 @@
                     {# {{ dump(anime) }} #}
                     <div class="card-group">
                         <div class="card mx-auto" style="width: 18rem">
-                            <img src={{ anime.attributes.posterImage.medium }} class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title text-center"> {{ anime.attributes.canonicalTitle }}</h5>
-                                {#                <p class="card-text">{{ anime.attributes.description }}</p> #}
-                                                            <a href={{ path('anime_read', {"id": anime.id}) }} class="btn btn-primary ">Go</a>
-                            </div>
+                            <a href="{{ path('anime_show', {"id": anime.id}) }}"><img src={{ anime.attributes.posterImage.medium }} class="card-img-top"
+                                            alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"> {{ anime.attributes.canonicalTitle }}</h5>
+                                    {#                <p class="card-text">{{ anime.attributes.description }}</p> #}
+                                    {#                                <a href={{ path('anime_show', {"id": anime.id}) }} class="btn btn-primary ">Go</a> #}
+                                </div>
+                            </a>
                         </div>
                     </div>
-
                 {% endfor %}
             </div>
         </div>
@@ -33,15 +34,16 @@
             <h1 class="pb-3 border-bottom  mt-5 pt-5">Manga selection...</h1>
             <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 row-cols-md-3 align-items-stretch g-4 py-5 ">
                 {% for manga in dataManga %}
-                    {# {{ dump(anime) }} #}
                     <div class="card-group">
                         <div class="card mx-auto" style="width: 18rem">
-                            <img src={{ manga.attributes.posterImage.medium }} class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title text-center"> {{ manga.attributes.canonicalTitle }}</h5>
-                                {#                <p class="card-text">{{ anime.attributes.description }}</p> #}
-{#                                <a href={{ path('anime_read', {"id": anime.id}) }} class="btn btn-primary ">Go</a>#}
-                            </div>
+                            <a href="{{ path('manga_show', {"id": manga.id}) }}"><img src={{ manga.attributes.posterImage.medium }} class="card-img-top"
+                                            alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"> {{ manga.attributes.canonicalTitle }}</h5>
+                                    {#                <p class="card-text">{{ anime.attributes.description }}</p> #}
+                                    {#                                <a href={{ path('anime_show', {"id": anime.id}) }} class="btn btn-primary ">Go</a> #}
+                                </div>
+                            </a>
                         </div>
                     </div>
 

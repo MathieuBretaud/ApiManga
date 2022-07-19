@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
 * {
@@ -24,13 +23,52 @@
 
 
 a.navbar-brand.apimanga {
-    color: #282828;
-    font-family: 'League Gothic', sans-serif;
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
+  color: #282828;
+  font-family: 'League Gothic', sans-serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 
+}
+
+section.banner {
+  position: relative;
+  height: 800px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  margin-top: 79px;
+}
+
+.card-group {
+  a {
+    text-decoration: none;
   }
+  h5{
+    color: black;
+    font-weight: bold;
+  }
+}
+
+
+.card {
+  //height: 300px;
+  overflow: hidden;
+
+  img {
+    transition: transform .1s;
+  }
+
+  img:hover {
+    transform: scale(1.5);
+  }
+}
+
+
+
+
+
 
 
 
