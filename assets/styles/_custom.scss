@@ -44,6 +44,8 @@ section.banner {
 .card-group {
   a {
     text-decoration: none;
+    outline: none;
+    //overflow: hidden;
   }
   h5{
     color: black;
@@ -61,12 +63,19 @@ section.banner {
   }
 
   img:hover {
-    transform: scale(1.5);
+    transform: scale(1.15);
   }
 }
 
+.star {
+width: 30px;
+}
 
-
+ul {
+  li{
+    list-style:none;
+  }
+}
 
 
 
