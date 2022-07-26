@@ -14,9 +14,11 @@
                     {# {{ dump(anime) }} #}
                     <div class="card-group">
                         <div class="card mx-auto" style="width: 18rem">
-                            <a href="{{ path('anime_show', {"id": anime.id}) }}"><img
-                                        src="{{ anime.attributes.posterImage.medium }}" class="card-img-top"
-                                        alt="image {{ anime['attributes']['slug'] }}">
+                            <a href="{{ path('anime_show', {"id": anime.id}) }}">
+                                <div class="overflow-hidden">
+                                    <img src="{{ anime.attributes.posterImage.medium }}" class="card-img-top"
+                                         alt="image {{ anime['attributes']['slug'] }}">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title text-center"> {{ anime.attributes.canonicalTitle }}</h5>
                                 </div>
