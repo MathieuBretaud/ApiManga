@@ -31,7 +31,7 @@ class CallApiService
     {
         $response = $this->client->request(
             'GET',
-            'https://kitsu.io/api/edge/manga/' . $id
+            'https://kitsu.io/api/edge/manga/'.$id
         );
 
         return $response->toArray();
@@ -46,7 +46,7 @@ class CallApiService
     {
         $response = $this->client->request(
             'GET',
-            'https://kitsu.io/api/edge/anime/' . $id
+            'https://kitsu.io/api/edge/anime/'.$id
         );
 
         return $response->toArray();
@@ -56,7 +56,7 @@ class CallApiService
     {
         $response = $this->client->request(
             'GET',
-            'https://kitsu.io/api/edge/trending/' . $var
+            'https://kitsu.io/api/edge/trending/'.$var
         );
 
         return $response->toArray();
