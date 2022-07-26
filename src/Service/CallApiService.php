@@ -26,6 +26,15 @@ class CallApiService
     {
         return $this->getApi('manga');
     }
+    public function getAllMangaId($id): array
+    {
+        $response = $this->client->request(
+            'GET',
+            'https://kitsu.io/api/edge/manga/'.$id
+        );
+
+        return $response->toArray();
+    }
 
     public function getAllAnime(): array
     {

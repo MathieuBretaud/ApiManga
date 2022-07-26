@@ -31,6 +31,7 @@ a.navbar-brand.apimanga {
 
 }
 
+/*************************************************** BANNER CLASS */
 section.banner {
   position: relative;
   height: 800px;
@@ -41,11 +42,11 @@ section.banner {
   margin-top: 79px;
 }
 
+/*************************************************** HOME CLASS */
 .card-group {
   a {
     text-decoration: none;
     outline: none;
-    //overflow: hidden;
   }
 
   h5 {
@@ -67,6 +68,7 @@ section.banner {
   }
 }
 
+/*************************************************** ANIME & MANGA SHOW CLASS */
 .star {
   width: 30px;
 }
@@ -80,9 +82,6 @@ ul {
 .logo {
   margin: 0;
   padding: 0;
-  //border: solid 1px;
-  width: 242px;
-  height: 275px;
 }
 
 .header-stats {
@@ -94,20 +93,22 @@ ul {
 .header-info {
   li {
     margin-bottom: 4px;
+    font-size: 1.1rem;
+    span{
+      font-size: 1.2rem;
+    }
+
+
   }
 }
 
-
+/*************************************************** MEDIA QUERIES */
 @media (min-width: 768px) {
   .yt-video {
     height: 300px;
     width: 500px;
   }
 }
-
-//.synopsis {
-//  width: 75%;
-//}
 
 
 
