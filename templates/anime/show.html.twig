@@ -3,7 +3,6 @@
 {% block title %}Hello AnimeController!{% endblock %}
 
 {% block body %}
-
     <div class="container-fluid p-0 m-0 g-0 js-filter">
         <section class="banner"
                  style="background-image: url('{{ response['attributes']['coverImage']['original'] }}');">
@@ -11,12 +10,10 @@
     </div>
     <section class="anime">
         <div class="container">
-{#            {{ dump(response) }}#}
             <h1 class="pb-3 border-bottom text-center my-5">{{ response['attributes']['canonicalTitle'] }}</h1>
             <div class="row">
                 <div class="header-stats">
-                    <ul class="row row-cols-1 row-cols-lg-5 row-cols-sm-2 row-cols-md-5 align-items-stretch g-4 py-5 ">
-                        <img src="{{ response['attributes']['posterImage']['medium'] }}" class="logo" alt="">
+                    <ul class="row row-cols-1 row-cols-lg-3 row-cols-sm-5 row-cols-md-3  g-4 border border-1 mx-auto pb-3">
                         <li>
                             <img src="{{ asset("img/star.png") }}" class="star" alt="star">
                             <span class="fw-bold ">Average Rating :</span> {{ response['attributes']['averageRating'] }}
@@ -30,10 +27,13 @@
                         </li>
                     </ul>
                 </div>
-
-                <div class="col-md-4 col-lg-3 mb-xs-4 mb-sm-4 mb-lg-0">
-                    <ul class="list-group">
-                        <h2 class="text-center">Information</h2>
+            </div>
+            <div class="row ">
+                <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-5 row-cols-md-3 g-4 py-lg-5">
+                    <img src="{{ response['attributes']['posterImage']['medium'] }}" class="logo"
+                         alt="image {{ response['attributes']['slug'] }}">
+                    <ul class="header-info mx-auto">
+                        <h2 class="text-center mb-4">Information</h2>
                         <li>
                             <span class="fw-bold">Original Title :</span> {{ response['attributes']['abbreviatedTitles'][0] }}
                         </li>
@@ -60,7 +60,8 @@
                         </li>
 
                         <li>
-                            <span class="fw-bold">Duration :</span> {{ response['attributes']['episodeLength'] }} min
+                            <span class="fw-bold">Duration :</span> {{ response['attributes']['episodeLength'] }}
+                            min
                         </li>
 
                         <li>
@@ -69,19 +70,38 @@
                     </ul>
 
                 </div>
-                <div class="col-6 synopsis">
-                    <div class="p-4 ">
-                        <h3 class="m-4 pb-1 text-center">Synopsis</h3>
-
-                        <p class="fst-normal lh-base fs-5 text-center">
-                            {{ response['attributes']['synopsis'] ?? "Unknown" }}
-                        </p>
-                    </div>
-                </div>
-
             </div>
-
+            <div class="row synopsis">
+                <div class="p-4 col-lg-12">
+                    <h3 class="m-4 pb-1 text-start border-bottom ">Synopsis</h3>
+                    <p class="fs-5 text-center">
+                        {{ response['attributes']['synopsis'] ?? "Unknown" }}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 ">
+                    <iframe class="yt-video d-block mx-auto my-4"
+                            src="https://www.youtube.com/embed/{{ response['attributes']['youtubeVideoId'] ?? "" }}"></iframe>
+                </div>
+            </div>
+            <div class="row">
+                <div class="">
+                    <h3 class="m-4 pb-1 text-end border-bottom">Description</h3>
+                    <p class="fs-5 text-center">
+                        {{ response['attributes']['description'] ?? "Unknown" }}
+                    </p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-6 mx-auto">
+                    <h5 class="text-center my-5 py-2 border-top border-bottom text-muted fs-6">Last
+                        update {{ response['attributes']['updatedAt'] ?? "Unknown" }}</h5>
+                </div>
+            </div>
         </div>
+
+
     </section>
 
 

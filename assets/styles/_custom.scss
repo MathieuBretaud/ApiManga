@@ -56,7 +56,6 @@ section.banner {
 
 
 .card {
-  //height: 300px;
   overflow: hidden;
 
   img {
@@ -78,21 +77,37 @@ ul {
   }
 }
 
+.logo {
+  margin: 0;
+  padding: 0;
+  //border: solid 1px;
+  width: 242px;
+  height: 275px;
+}
+
 .header-stats {
-  .logo {
-    margin: 0;
-    padding: 0;
-    border: solid 1px;
-    width: 242px;
-    height: 275px;
+  ul {
+    background:#F6F6F6;
   }
 }
 
-.synopsis {
-  width: 75%;
+.header-info {
+  li {
+    margin-bottom: 4px;
+  }
 }
 
 
+@media (min-width: 768px) {
+  .yt-video {
+    height: 300px;
+    width: 500px;
+  }
+}
+
+//.synopsis {
+//  width: 75%;
+//}
 
 
 
