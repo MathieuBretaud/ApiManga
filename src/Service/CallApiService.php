@@ -22,12 +22,22 @@ class CallApiService
         $this->client = $client;
     }
 
+    private function getApi(string $var): array
+    {
+        $response = $this->client->request(
+            'GET',
+            'https://kitsu.io/api/edge/trending/'.$var
+        );
+
+        return $response->toArray();
+    }
+
     public function getAllManga(): array
     {
         return $this->getApi('manga');
     }
 
-    public function getAllMangaId($id): array
+    public function getMangaId($id): array
     {
         $response = $this->client->request(
             'GET',
@@ -42,21 +52,11 @@ class CallApiService
         return $this->getApi('anime');
     }
 
-    public function getAllAnimeId($id): array
+    public function getAnimeId($id): array
     {
         $response = $this->client->request(
             'GET',
             'https://kitsu.io/api/edge/anime/'.$id
-        );
-
-        return $response->toArray();
-    }
-
-    private function getApi(string $var): array
-    {
-        $response = $this->client->request(
-            'GET',
-            'https://kitsu.io/api/edge/trending/'.$var
         );
 
         return $response->toArray();

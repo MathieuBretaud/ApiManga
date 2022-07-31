@@ -21,7 +21,7 @@ class AnimeController extends AbstractController
     #[Route('/anime/{id}', name: 'anime_show')]
     public function show(CallApiService $callApiService, $id): Response
     {
-        $anime = $callApiService->getAllAnimeId($id);
+        $anime = $callApiService->getAnimeId($id);
 
         return $this->render('anime/show.html.twig', [
             'response' => $anime['data'],

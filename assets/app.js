@@ -13,10 +13,9 @@ import './bootstrap';
 
 import * as bootstrap from 'bootstrap';
 
-console.log('je suis dans app');
 const loader = document.querySelector('.loader');
 
-window.addEventListener('load', () => {
-    console.log('je suis dans loader');
-    loader.classList.add('fondu-out');
-})
+// window.addEventListener('load', () => {
+//     console.log('je suis dans loader');
+//     loader.classList.add('fondu-out');
+// })

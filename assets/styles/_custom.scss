@@ -175,6 +175,18 @@ ul {
   }
 }
 
+@media (max-width: 425px) {
+  .letter {
+    font-size: 50px;
+  }
+}
+
+@media(max-width: 320px) {
+   .letter {
+     font-size: 40px;
+   }
+}
+
 
 
 

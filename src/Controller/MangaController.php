@@ -21,7 +21,7 @@ class MangaController extends AbstractController
     #[Route('/manga/{id}', name: 'manga_show')]
     public function show(CallApiService $callApiService, $id): Response
     {
-        $manga = $callApiService->getAllMangaId($id);
+        $manga = $callApiService->getMangaId($id);
 
         return $this->render('manga/show.html.twig', [
             'response' => $manga['data'],
