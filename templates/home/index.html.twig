@@ -38,9 +38,11 @@
                 {% for manga in dataManga %}
                     <div class="card-group">
                         <div class="card mx-auto" style="width: 18rem">
-                            <a href="{{ path('manga_show', {"id": manga.id}) }}"><img
-                                        src={{ manga.attributes.posterImage.medium }} class="card-img-top"
-                                        alt="image {{ manga['attributes']['slug'] }}">
+                            <a href="{{ path('manga_show', {"id": manga.id}) }}">
+                                <div class="overflow-hidden">
+                                    <img src={{ manga.attributes.posterImage.medium }} class="card-img-top"
+                                         alt="image {{ manga['attributes']['slug'] }}">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title text-center"> {{ manga.attributes.canonicalTitle }}</h5>
                                 </div>
